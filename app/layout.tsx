@@ -17,12 +17,12 @@ const bebasNeue = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: "Jaren — New Album June 13",
+  title: "Jaren — Intuition Out Now",
   description:
-    "New album dropping June 13. Stream on Spotify, Apple Music, and YouTube.",
+    "Intuition is out now. Stream on Spotify, Apple Music, and YouTube.",
   openGraph: {
-    title: "Jaren — New Album June 13",
-    description: "New album dropping June 13.",
+    title: "Jaren — Intuition Out Now",
+    description: "Intuition is out now. Stream it on Spotify.",
     images: ["/images/hero.jpeg"],
   },
 };

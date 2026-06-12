@@ -29,15 +29,6 @@ const releases = [
     spotify: 'https://open.spotify.com/album/5PnHGrnS0A6qVolOBbAYlP?si=FPkrOFPdR-yO9VmmHAkz9g',
     soundcloud: '#',
   },
-  {
-    title: 'New Album',
-    artist: 'Jaren',
-    type: 'Album',
-    year: '2026',
-    cover: '/images/album-upcoming.png',
-    soundcloud: '#',
-    upcoming: true,
-  },
 ]
 
 export default function Discography() {
@@ -105,7 +96,7 @@ export default function Discography() {
                   <span className="text-xs tracking-widest uppercase" style={{ color: '#0d9488' }}>
                     {release.type}
                   </span>
-                  {release.upcoming && (
+                  {'upcoming' in release && release.upcoming && (
                     <span
                       className="text-[10px] px-2 py-0.5 rounded-full tracking-wider"
                       style={{ background: 'rgba(13,148,136,0.15)', color: '#0d9488', border: '1px solid rgba(13,148,136,0.3)' }}
@@ -125,7 +116,7 @@ export default function Discography() {
                 </p>
 
                 {/* Streaming links */}
-                {!release.upcoming && (
+                {!('upcoming' in release && release.upcoming) && (
                   <div className="flex flex-wrap items-center gap-2">
                     {'spotify' in release && release.spotify && (
                       <a
