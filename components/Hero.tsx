@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { ArrowRight, SpotifyLogo, AppleLogo, YoutubeLogo } from '@phosphor-icons/react'
 
 const streamingLinks = [
-  { label: 'Spotify', href: '#', Icon: SpotifyLogo },
+  { label: 'Spotify', href: 'https://open.spotify.com/artist/0iHp1hWXVRxBKyeuv2aq8t?si=WfHtHkmPRaeBW8rkDXgXig', Icon: SpotifyLogo },
   { label: 'Apple Music', href: '#', Icon: AppleLogo },
   { label: 'YouTube', href: '#', Icon: YoutubeLogo },
 ]
