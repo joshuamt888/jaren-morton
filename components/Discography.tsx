@@ -96,14 +96,6 @@ export default function Discography() {
                   <span className="text-xs tracking-widest uppercase" style={{ color: '#0d9488' }}>
                     {release.type}
                   </span>
-                  {'upcoming' in release && release.upcoming && (
-                    <span
-                      className="text-[10px] px-2 py-0.5 rounded-full tracking-wider"
-                      style={{ background: 'rgba(13,148,136,0.15)', color: '#0d9488', border: '1px solid rgba(13,148,136,0.3)' }}
-                    >
-                      UPCOMING
-                    </span>
-                  )}
                 </div>
                 <h3
                   className="text-xl md:text-2xl font-bold text-white truncate mb-1"
@@ -116,25 +108,25 @@ export default function Discography() {
                 </p>
 
                 {/* Streaming links */}
-                {!('upcoming' in release && release.upcoming) && (
-                  <div className="flex flex-wrap items-center gap-2">
-                    {'spotify' in release && release.spotify && (
-                      <a
-                        href={release.spotify as string}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={e => e.stopPropagation()}
-                        className="flex items-center gap-1.5 text-[11px] tracking-wider px-3 py-1.5 rounded-full transition-all duration-200 hover:opacity-80"
-                        style={{
-                          background: 'rgba(29,185,84,0.1)',
-                          border: '1px solid rgba(29,185,84,0.3)',
-                          color: '#1DB954',
-                        }}
-                      >
-                        <SpotifyLogo size={13} weight="fill" />
-                        SPOTIFY
-                      </a>
-                    )}
+                <div className="flex flex-wrap items-center gap-2">
+                  {release.spotify !== '#' && (
+                    <a
+                      href={release.spotify}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={e => e.stopPropagation()}
+                      className="flex items-center gap-1.5 text-[11px] tracking-wider px-3 py-1.5 rounded-full transition-all duration-200 hover:opacity-80"
+                      style={{
+                        background: 'rgba(29,185,84,0.1)',
+                        border: '1px solid rgba(29,185,84,0.3)',
+                        color: '#1DB954',
+                      }}
+                    >
+                      <SpotifyLogo size={13} weight="fill" />
+                      SPOTIFY
+                    </a>
+                  )}
+                  {release.soundcloud !== '#' && (
                     <a
                       href={release.soundcloud}
                       target="_blank"
@@ -152,8 +144,8 @@ export default function Discography() {
                       </svg>
                       SOUNDCLOUD
                     </a>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
             </div>
 
