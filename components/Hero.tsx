@@ -63,7 +63,7 @@ export default function Hero() {
             className="text-[11px] tracking-[0.3em] mb-5 uppercase"
             style={{ color: '#0d9488' }}
           >
-            Intuition — Out Now
+            New Album — Coming Soon
           </motion.p>
 
           {/* Massive artist name */}
@@ -89,7 +89,7 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
             >
-              New Album Out Now
+              New Album Dropping
             </motion.h2>
           </div>
 
