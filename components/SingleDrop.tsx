@@ -117,20 +117,20 @@ export default function SingleDrop() {
           {/* Album cover */}
           <div className="relative rounded-2xl overflow-hidden aspect-square w-full z-10">
             <Image
-              src="/images/photo-3.jpg"
+              src="/images/album-growth-pattern.jpg"
               alt="Jaren — new album"
               fill
-              className="object-cover grayscale"
+              className="object-cover object-center"
             />
-            {/* Teal tint overlay */}
+            {/* Dark vignette */}
             <div
               className="absolute inset-0"
-              style={{ background: 'rgba(13,148,136,0.08)', mixBlendMode: 'color' }}
+              style={{ background: 'rgba(8,8,8,0.25)' }}
             />
             {/* Track info overlay */}
             <div
               className="absolute bottom-0 left-0 right-0 px-6 py-5"
-              style={{ background: 'linear-gradient(0deg, rgba(8,8,8,0.95) 0%, transparent 100%)' }}
+              style={{ background: 'linear-gradient(0deg, rgba(8,8,8,0.92) 0%, transparent 100%)' }}
             >
               <p className="text-xs tracking-widest mb-1" style={{ color: '#0d9488' }}>DROPPING JUNE 13</p>
               <p className="text-sm font-medium" style={{ color: '#f2f2f0' }}>New Album — Jaren</p>
