@@ -24,7 +24,7 @@ const releases = [
     artist: 'Jaren',
     type: 'Album',
     year: '2026',
-    cover: '/images/photo-1.png',
+    cover: '/images/album-new.png',
     soundcloud: '#',
     upcoming: true,
   },
