@@ -115,7 +115,7 @@ export default function SingleDrop() {
             }}
           >
             <Image
-              src="/images/photo-1.png"
+              src="/images/album-upcoming.png"
               alt="Jaren — new album"
               fill
               className="object-cover object-center"
