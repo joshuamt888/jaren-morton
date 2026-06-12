@@ -102,20 +102,14 @@ export default function SingleDrop() {
         </div>
 
         {/* Right — visual */}
-        <div className="relative flex items-center justify-center">
-          {/* Teal glow ring — negative inset so it bleeds past all four sides */}
+        <div className="relative">
+          {/* Album cover — box-shadow glow renders instantly, no blur-div flash */}
           <div
-            className="absolute pointer-events-none z-0"
+            className="relative rounded-2xl overflow-hidden aspect-square w-full"
             style={{
-              inset: '-32px',
-              borderRadius: '2rem',
-              background: 'rgba(13,148,136,0.38)',
-              filter: 'blur(52px)',
+              boxShadow: '0 0 40px 12px rgba(13,148,136,0.45), 0 0 80px 30px rgba(13,148,136,0.18)',
             }}
-          />
-
-          {/* Album cover */}
-          <div className="relative rounded-2xl overflow-hidden aspect-square w-full z-10">
+          >
             <Image
               src="/images/album-growth-pattern.jpg"
               alt="Jaren — new album"
@@ -137,6 +131,7 @@ export default function SingleDrop() {
             </div>
           </div>
         </div>
+
       </div>
     </section>
   )
