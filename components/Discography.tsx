@@ -6,7 +6,7 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { MusicNote } from '@phosphor-icons/react'
+import { MusicNote, SpotifyLogo } from '@phosphor-icons/react'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -18,6 +18,7 @@ const releases = [
     year: '2024',
     cover: '/images/album-growth-pattern.jpg',
     soundcloud: 'https://soundcloud.com/kyreis-harrison',
+    spotify: 'https://open.spotify.com/artist/0iHp1hWXVRxBKyeuv2aq8t?si=WfHtHkmPRaeBW8rkDXgXig',
   },
   {
     title: 'New Album',
@@ -114,9 +115,26 @@ export default function Discography() {
                   {release.artist} · {release.year}
                 </p>
 
-                {/* Streaming link */}
+                {/* Streaming links */}
                 {!release.upcoming && (
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    {'spotify' in release && release.spotify && (
+                      <a
+                        href={release.spotify as string}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={e => e.stopPropagation()}
+                        className="flex items-center gap-1.5 text-[11px] tracking-wider px-3 py-1.5 rounded-full transition-all duration-200 hover:opacity-80"
+                        style={{
+                          background: 'rgba(29,185,84,0.1)',
+                          border: '1px solid rgba(29,185,84,0.3)',
+                          color: '#1DB954',
+                        }}
+                      >
+                        <SpotifyLogo size={13} weight="fill" />
+                        SPOTIFY
+                      </a>
+                    )}
                     <a
                       href={release.soundcloud}
                       target="_blank"
@@ -129,8 +147,7 @@ export default function Discography() {
                         color: '#ff5500',
                       }}
                     >
-                      {/* SoundCloud icon */}
-                      <svg width="14" height="10" viewBox="0 0 1333 583" fill="currentColor">
+                      <svg width="13" height="9" viewBox="0 0 1333 583" fill="currentColor">
                         <path d="M0 447q0 54 38 92t92 38q54 0 91-38t37-92V136q0-54-37-91T130 8Q76 8 38 45T0 136v311zm333 54q0 54 38 92t92 38q54 0 91-38t37-92V82q0-54-37-91T463 -46q-54 0-92 37T333 82v419zm333-27q0 54 38 92t92 38q54 0 91-38t37-92V190q0-54-37-91T796 62q-54 0-92 37t-38 91v184zm334 0q0 54 37 92t92 38q54 0 92-38t38-92V244q0-54-38-91t-92-37q-55 0-92 37t-37 91v230zm275-184v184q0 54 38 92t92 38q55 0 92-38t37-92V290q0-54-37-91t-92-37q-54 0-92 37t-38 91z"/>
                       </svg>
                       SOUNDCLOUD
