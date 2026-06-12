@@ -78,7 +78,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[100svh] flex items-center overflow-hidden"
+      className="relative min-h-[100svh] flex items-start md:items-center overflow-hidden"
     >
       {/* Background image */}
       <div className="absolute inset-0 z-0">
@@ -104,8 +104,42 @@ export default function Hero() {
         style={{ background: 'rgba(13,148,136,0.08)' }}
       />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pt-28 md:pt-0">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pt-24 md:pt-0">
         <div className="max-w-2xl">
+
+          {/* Mobile-only album cover */}
+          <motion.div
+            className="block md:hidden mb-7"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+          >
+            <div
+              className="relative rounded-2xl overflow-hidden w-full aspect-square"
+              style={{
+                boxShadow: '0 0 28px 8px rgba(13,148,136,0.4), 0 0 60px 20px rgba(13,148,136,0.15)',
+              }}
+            >
+              <Image
+                src="/images/album-new.png"
+                alt="Jaren — new album"
+                fill
+                priority
+                className="object-cover object-center"
+              />
+              <div
+                className="absolute inset-0"
+                style={{ background: 'rgba(8,8,8,0.15)' }}
+              />
+              <div
+                className="absolute bottom-0 left-0 right-0 px-4 py-3"
+                style={{ background: 'linear-gradient(0deg, rgba(8,8,8,0.85) 0%, transparent 100%)' }}
+              >
+                <p className="text-[10px] tracking-widest" style={{ color: '#0d9488' }}>DROPPING JUNE 13</p>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Label */}
           <motion.p
             initial={{ opacity: 0, y: 10 }}
