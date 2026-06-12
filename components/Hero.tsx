@@ -78,46 +78,49 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[120svh] md:min-h-[100svh] flex items-end md:items-center pb-16 md:pb-0"
+      className="relative min-h-[100svh] flex items-end pb-12 md:pb-0 md:items-center overflow-hidden"
     >
-      {/* Background image — right aligned */}
+      {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(90deg, #080808 35%, transparent 70%), linear-gradient(0deg, #080808 0%, transparent 40%)' }} />
+        <div
+          className="absolute inset-0 z-10"
+          style={{
+            background:
+              'linear-gradient(180deg, #080808 0%, rgba(8,8,8,0.5) 30%, rgba(8,8,8,0.7) 60%, #080808 100%), linear-gradient(90deg, #080808 20%, transparent 60%)',
+          }}
+        />
         <Image
           src="/images/hero.jpeg"
           alt="Jaren"
           fill
           priority
-          className="object-cover object-center md:object-right opacity-60"
+          className="object-cover object-top md:object-center opacity-55"
         />
       </div>
 
       {/* Teal ambient glow */}
       <div
-        className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-[120px] z-0 pointer-events-none"
+        className="absolute bottom-0 left-0 w-80 h-80 rounded-full blur-[100px] z-0 pointer-events-none"
         style={{ background: 'rgba(13,148,136,0.08)' }}
       />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pt-32 md:pt-0">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pt-28 md:pt-0">
         <div className="max-w-2xl">
           {/* Label */}
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-xs tracking-[0.3em] mb-6 uppercase"
+            className="text-[11px] tracking-[0.3em] mb-5 uppercase"
             style={{ color: '#0d9488' }}
           >
             New Album — June 13, 2026
           </motion.p>
 
           {/* Massive artist name */}
-          <div
-            className="overflow-hidden mb-2"
-            style={{ fontFamily: 'var(--font-bebas)' }}
-          >
+          <div className="overflow-hidden mb-1" style={{ fontFamily: 'var(--font-bebas)' }}>
             <motion.h1
-              className="text-[clamp(5rem,18vw,14rem)] leading-none tracking-wider text-white"
+              className="text-[clamp(4.5rem,22vw,14rem)] leading-none tracking-wider text-white"
               custom={0}
               variants={wordVariants}
               initial="hidden"
@@ -128,9 +131,9 @@ export default function Hero() {
           </div>
 
           {/* Subline */}
-          <div className="overflow-hidden mb-10">
+          <div className="overflow-hidden mb-8">
             <motion.h2
-              className="text-[clamp(1rem,3.5vw,2.5rem)] tracking-[0.15em] uppercase font-light leading-tight"
+              className="text-[clamp(0.85rem,3.5vw,2.5rem)] tracking-[0.15em] uppercase font-light leading-tight"
               style={{ color: '#a1a1aa' }}
               custom={3}
               variants={wordVariants}
@@ -146,7 +149,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="mb-10"
+            className="mb-8"
           >
             <Countdown />
           </motion.div>
@@ -156,7 +159,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.7 }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap gap-3"
           >
             {streamingLinks.map(({ label, href, Icon }) => (
               <motion.a
@@ -164,14 +167,14 @@ export default function Hero() {
                 href={href}
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
-                className="flex items-center gap-2 px-5 py-3 rounded-full border text-sm font-medium tracking-wide transition-colors"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-full border text-xs font-medium tracking-wide transition-colors"
                 style={{
                   borderColor: 'rgba(13,148,136,0.4)',
                   color: '#f2f2f0',
                   background: 'rgba(13,148,136,0.08)',
                 }}
               >
-                <Icon size={16} weight="fill" style={{ color: '#0d9488' }} />
+                <Icon size={15} weight="fill" style={{ color: '#0d9488' }} />
                 {label}
               </motion.a>
             ))}
@@ -179,9 +182,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll cue */}
+      {/* Scroll cue — hidden on mobile to save space */}
       <motion.div
-        className="absolute bottom-8 right-8 md:right-16 flex flex-col items-center gap-2 z-10"
+        className="absolute bottom-8 right-8 md:right-16 hidden md:flex flex-col items-center gap-2 z-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4 }}

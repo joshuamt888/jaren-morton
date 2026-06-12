@@ -6,7 +6,7 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { ArrowUpRight } from '@phosphor-icons/react'
+import { SpotifyLogo, AppleLogo } from '@phosphor-icons/react'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -85,20 +85,37 @@ export default function SingleDrop() {
             Raw emotion, dark atmosphere. A full project built from the inside out — Jaren's next chapter drops June 13.
           </p>
 
-          <motion.a
-            href="#"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            className="single-meta inline-flex items-center gap-3 px-8 py-4 font-medium tracking-wide text-sm transition-colors"
-            style={{
-              background: '#0d9488',
-              color: '#080808',
-              borderRadius: '4px',
-            }}
-          >
-            Stream Now
-            <ArrowUpRight size={16} weight="bold" />
-          </motion.a>
+          <div className="single-meta flex flex-wrap gap-3">
+            <motion.a
+              href="#"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 font-medium tracking-wide text-sm transition-colors rounded"
+              style={{
+                background: '#1DB954',
+                color: '#000',
+                borderRadius: '4px',
+              }}
+            >
+              <SpotifyLogo size={18} weight="fill" />
+              Pre-Save on Spotify
+            </motion.a>
+            <motion.a
+              href="#"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 font-medium tracking-wide text-sm transition-colors rounded"
+              style={{
+                background: 'rgba(255,255,255,0.06)',
+                color: '#f2f2f0',
+                border: '1px solid rgba(255,255,255,0.15)',
+                borderRadius: '4px',
+              }}
+            >
+              <AppleLogo size={18} weight="fill" />
+              Pre-Save on Apple Music
+            </motion.a>
+          </div>
         </div>
 
         {/* Right — visual */}
