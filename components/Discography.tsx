@@ -18,7 +18,7 @@ const releases = [
     year: '2024',
     cover: '/images/album-growth-pattern.jpg',
     soundcloud: 'https://soundcloud.com/kyreis-harrison',
-    spotify: 'https://open.spotify.com/artist/0iHp1hWXVRxBKyeuv2aq8t?si=WfHtHkmPRaeBW8rkDXgXig',
+    spotify: 'https://open.spotify.com/album/1n0PwN3koYBeV6d7c5x8hA?si=c_j2ikmrT9WhSmOOAziPkA',
   },
   {
     title: 'Intuition',
