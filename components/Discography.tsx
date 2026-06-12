@@ -24,7 +24,7 @@ const releases = [
     title: 'Intuition',
     artist: 'Jaren',
     type: 'Album',
-    year: '2025',
+    year: '2023',
     cover: '/images/album-new.png',
     spotify: 'https://open.spotify.com/album/5PnHGrnS0A6qVolOBbAYlP?si=FPkrOFPdR-yO9VmmHAkz9g',
     soundcloud: '#',
@@ -104,7 +104,7 @@ export default function Discography() {
                   {release.title}
                 </h3>
                 <p className="text-sm mb-4" style={{ color: '#71717a' }}>
-                  {release.artist} · {release.year}
+                  {release.artist}
                 </p>
 
                 {/* Streaming links */}

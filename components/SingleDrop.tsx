@@ -63,14 +63,14 @@ export default function SingleDrop() {
         {/* Left — text */}
         <div>
           <p className="single-meta text-xs tracking-[0.3em] uppercase mb-8" style={{ color: '#0d9488' }}>
-            New Album — Out Now
+            New Album — Coming Soon
           </p>
 
           <h2
             className="text-[clamp(2.5rem,6vw,5rem)] leading-none tracking-tight text-white mb-6"
             style={{ fontFamily: 'var(--font-bebas)', letterSpacing: '0.05em' }}
           >
-            {splitWords('INTUITION')}
+            {splitWords('NEW ALBUM NAME')}
           </h2>
 
           <div className="single-meta flex items-center gap-4 mb-12">
@@ -82,25 +82,29 @@ export default function SingleDrop() {
           </div>
 
           <p className="single-meta text-base leading-relaxed max-w-md mb-10" style={{ color: '#71717a' }}>
-            Raw emotion, dark atmosphere. A full project built from the inside out — Intuition is out now.
+            Raw emotion, dark atmosphere. A full project built from the inside out — Jaren's next chapter is coming.
           </p>
 
           <div className="single-meta flex flex-wrap gap-3">
             <motion.a
-              href="https://open.spotify.com/album/5PnHGrnS0A6qVolOBbAYlP?si=FPkrOFPdR-yO9VmmHAkz9g"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-2.5 px-6 py-3.5 font-medium tracking-wide text-sm transition-colors rounded"
-              style={{
-                background: '#1DB954',
-                color: '#000',
-                borderRadius: '4px',
-              }}
+              style={{ background: '#1DB954', color: '#000', borderRadius: '4px' }}
             >
               <SpotifyLogo size={18} weight="fill" />
-              Stream on Spotify
+              Pre-Save on Spotify
+            </motion.a>
+            <motion.a
+              href="#"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 font-medium tracking-wide text-sm transition-colors rounded"
+              style={{ background: 'rgba(255,255,255,0.06)', color: '#f2f2f0', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '4px' }}
+            >
+              <AppleLogo size={18} weight="fill" />
+              Pre-Save on Apple Music
             </motion.a>
           </div>
         </div>
@@ -130,8 +134,8 @@ export default function SingleDrop() {
               className="absolute bottom-0 left-0 right-0 px-6 py-5"
               style={{ background: 'linear-gradient(0deg, rgba(8,8,8,0.92) 0%, transparent 100%)' }}
             >
-              <p className="text-xs tracking-widest mb-1" style={{ color: '#0d9488' }}>OUT NOW</p>
-              <p className="text-sm font-medium" style={{ color: '#f2f2f0' }}>Intuition — Jaren</p>
+              <p className="text-xs tracking-widest mb-1" style={{ color: '#0d9488' }}>COMING SOON</p>
+              <p className="text-sm font-medium" style={{ color: '#f2f2f0' }}>New Album — Jaren</p>
             </div>
           </div>
         </div>
